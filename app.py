@@ -8,6 +8,10 @@ import os
 def hello():
     return "Hello World!"
 
+@route('/request', method = 'POST')
+def request():
+    return
+
 
 application = bottle.default_app()
 if __name__ == '__app__':
