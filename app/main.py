@@ -15,9 +15,9 @@ def static(path):
 @bottle.get('/test')
 def test():
     data = None
-    with open(‘dataWithElevation.json') as data_file:
+    with open('dataWithElevation.json') as data_file:
         data = json.load(data_file)
-    return data
+    return {'data':data}
 
 # Expose WSGI app (so gunicorn can find it)
 
