@@ -27,6 +27,14 @@ def index():
 def test1():
     return {'text': 'Hello WOrld'}
 
+#lat is latidude
+#lng is longitude
+@bottle.get('/test2')
+def test2():
+    data = bottle.request.json
+    return data
+
+
 # Expose WSGI app (so gunicorn can find it)
 
 application = bottle.default_app()
