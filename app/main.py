@@ -32,7 +32,11 @@ def test1():
 @bottle.post('/test2')
 def test2():
     data = bottle.request.json
-    return data
+    #data is in a dictionary
+    returnedData = {}
+    returnedData['lat'] = data["test1"]
+    returnedData['lng'] = data["test2"]
+    return returnedData
 
 
 # Expose WSGI app (so gunicorn can find it)
