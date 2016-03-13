@@ -8,11 +8,6 @@ import copy
 import os
 import json
 
-with open('data.json') as data_file:
-    data = json.load(data_file)
-pprint(data)
-
-
 ###### server shit down here
 @bottle.route('/static/<path:path>')
 def static(path):
@@ -20,9 +15,9 @@ def static(path):
 
 @bottle.get('/test')
 def test():
-    with open('../app.json') as data_file:
-    data = json.load(data_file)
-    return data
+    # with open('../app.json') as data_file:
+    # data = json.load(data_file)
+    return {'hello':'test'}
 
 # Expose WSGI app (so gunicorn can find it)
 
