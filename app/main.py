@@ -12,42 +12,9 @@ import os
 def static(path):
     return bottle.static_file(path, root='static/')
 
-
-# code to give link for pictures and shit
-@bottle.get('/')
-def index():
-    head_url = '%s://%s/static/head.jpg' \
-        % (bottle.request.urlparts.scheme,
-           bottle.request.urlparts.netloc)
-
-    return {'color': '#00ff00', 'head': head_url}
-
-
-@bottle.get('/test1')
-def test1():
+@bottle.get('/test')
+def test():
     return {'text': 'Hello WOrld'}
-
-#lat is latidude
-#lng is longitude
-@bottle.post('/test2')
-def test2():
-    data = bottle.request.json
-    #data is in a dictionary
-    returnedData = {}
-    returnedData['lat'] = data["test1"]
-    returnedData['lng'] = data["test2"]
-    return returnedData
-
-gmaps = googlemaps.Client(key = 'AIzaSyDEtK4FuvEMBByZ5c5EQCQ1UF3weG0ysM8')
-
-'''@bottle.post('/testmap')
-def testMap():
-    directions_result = gmaps.directions("Sydney Town Hall",
-    "Parramatta, NSW",
-    mode = "transit")
-    return directions_result'''
-
-
 
 # Expose WSGI app (so gunicorn can find it)
 
