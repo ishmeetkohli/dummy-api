@@ -29,7 +29,7 @@ def test1():
 
 #lat is latidude
 #lng is longitude
-@bottle.get('/test2')
+@bottle.post('/test2')
 def test2():
     data = bottle.request.json
     return data
