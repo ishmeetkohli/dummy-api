@@ -6,7 +6,7 @@ import os
 
 @route('/hello')
 def hello():
-    return "Hello World!"
+    return template('<b>Hello {{name}}</b>!', name=name)
 
 @route('/request', method = 'POST')
 def request():
