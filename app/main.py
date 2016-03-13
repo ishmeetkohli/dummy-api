@@ -8,15 +8,15 @@ import copy
 import os
 import json
 
-###### server shit down here
 @bottle.route('/static/<path:path>')
 def static(path):
     return bottle.static_file(path, root='static/')
 
 @bottle.get('/test')
 def test():
-    with open('../app.json') as data_file:
-    data = json.load(data_file)
+    data = None
+    with open('test.json') as data_file:
+        data = json.load(data_file)
     return data
 
 # Expose WSGI app (so gunicorn can find it)
