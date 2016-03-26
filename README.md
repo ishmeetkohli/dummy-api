@@ -1,3 +1,3 @@
-A dummy web service to testing my personal applications.
+A dummy web service to test my personal applications.
 
 NO BIG DEAL !!
