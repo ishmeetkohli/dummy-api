@@ -12,12 +12,26 @@ import json
 def static(path):
     return bottle.static_file(path, root='static/')
 
-@bottle.get('/test')
+@bottle.get('/first')
 def test():
     data = None
     with open('dataWithElevation.json') as data_file:
         data = json.load(data_file)
-    return {'data':data}
+    return json.dumps(data)
+    
+@bottle.get('/later')
+def test():
+    data = None
+    # with open('dataWithElevation.json') as data_file:
+    #     data = json.load(data_file)
+    return None
+    
+@bottle.get('/reset')
+def test():
+    data = None
+    # with open('dataWithElevation.json') as data_file:
+    #     data = json.load(data_file)
+    return None
 
 # Expose WSGI app (so gunicorn can find it)
 
