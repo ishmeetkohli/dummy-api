@@ -13,22 +13,22 @@ def static(path):
     return bottle.static_file(path, root='static/')
 
 @bottle.get('/first')
-def test():
+def first():
     data = None
     with open('dataWithElevation.json') as data_file:
         data = json.load(data_file)
     return json.dumps(data)
     
 @bottle.get('/later')
-def test():
-    data = None
+def later():
+    # data = None
     # with open('dataWithElevation.json') as data_file:
     #     data = json.load(data_file)
     return None
     
 @bottle.get('/reset')
-def test():
-    data = None
+def reset():
+    # data = None
     # with open('dataWithElevation.json') as data_file:
     #     data = json.load(data_file)
     return None
